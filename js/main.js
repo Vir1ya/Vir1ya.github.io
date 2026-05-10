@@ -301,18 +301,20 @@
       block.insertBefore(header, block.firstChild);
 
       btn.addEventListener('click', function () {
-        var code = block.querySelector('.code pre') || block.querySelector('pre');
+        var self = this;
+        var parentBlock = self.closest('figure.highlight');
+        var code = parentBlock.querySelector('.code pre') || parentBlock.querySelector('pre');
         var text = code ? code.textContent : '';
         navigator.clipboard.writeText(text).then(function () {
-          btn.textContent = 'Copied!';
-          btn.classList.add('copied');
+          self.textContent = 'Copied!';
+          self.classList.add('copied');
           setTimeout(function () {
-            btn.textContent = 'Copy';
-            btn.classList.remove('copied');
+            self.textContent = 'Copy';
+            self.classList.remove('copied');
           }, 2000);
         }).catch(function () {
-          btn.textContent = 'Failed';
-          setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+          self.textContent = 'Failed';
+          setTimeout(function () { self.textContent = 'Copy'; }, 2000);
         });
       });
     }
