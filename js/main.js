@@ -39,8 +39,11 @@
       wash.style.background = targetGradient;
       banner.appendChild(wash);
 
+      // Apply target theme immediately — body/banner background transitions
+      // via CSS transition in sync with the wash animation
+      applyTheme(target);
+
       wash.addEventListener('animationend', function () {
-        applyTheme(target);
         wash.remove();
       });
     } else {
