@@ -924,12 +924,24 @@ figure.highlight table {
   margin: 0;
   border: none;
   width: 100%;
+  table-layout: fixed;
 }
 figure.highlight table td,
 figure.highlight table th {
   border: none;
   padding: 0;
   vertical-align: top;
+}
+figure.highlight > pre {
+  margin: 0;
+  padding: var(--spacing-md);
+  overflow-x: auto;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+  color: var(--color-code-text);
+  font-size: 0.85em;
+  line-height: 1.6;
 }
 figure.highlight .gutter {
   width: 3.2rem;
