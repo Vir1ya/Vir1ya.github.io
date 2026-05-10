@@ -350,7 +350,7 @@ kbd {
 [data-pixel="true"] .home-banner-bg {
   background: radial-gradient(ellipse 80% 70% at 50% 25%, #6baed6 0%, var(--color-accent-dim) 50%, var(--color-bg-secondary) 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 43%, 93% 43%, 93% 56%, 86% 56%, 86% 67%, 79% 67%, 79% 76%, 72% 76%, 72% 83%, 65% 83%, 65% 88%, 58% 88%, 58% 92%, 51% 92%, 51% 95%, 44% 95%, 44% 97%, 37% 97%, 37% 99%, 30% 99%, 30% 100%, 0% 100%);
-  transition: background 0.7s ease-in-out;
+  transition: background 0.8s steps(8, end);
 }
 @-moz-keyframes bannerWash {
   0% {
@@ -1472,6 +1472,7 @@ figure.highlight::before {
 }
 [data-pixel="true"] figure.highlight {
   background: var(--color-code-bg);
+  transition: background 0.8s steps(8, end);
 }
 [data-pixel="true"] figure.highlight .code pre {
   color: var(--color-code-text);
@@ -1494,6 +1495,9 @@ figure.highlight::before {
 [data-pixel="true"] ::selection {
   background: var(--color-accent);
   color: var(--color-bg);
+}
+[data-pixel="true"] body {
+  transition: background 0.8s steps(8, end), color 0.8s steps(8, end);
 }
 [data-pixel="true"][data-theme="dark"] {
   --color-bg: #fcf8f8;

@@ -25,28 +25,28 @@
     var current = document.documentElement.getAttribute('data-theme') || 'light';
     var target = current === 'dark' ? 'light' : 'dark';
 
-    // If banner exists, animate color wash inside it
     var banner = document.querySelector('.home-banner-bg');
-    if (banner) {
-      // Read target gradient by temporarily switching
+    var isPixel = document.documentElement.getAttribute('data-pixel') === 'true';
+
+    if (banner && !isPixel) {
+      // Normal mode: animate color wash curtain inside banner
       applyTheme(target);
       var targetGradient = getComputedStyle(banner).background;
       applyTheme(current);
 
-      // Create wash layer that slides down inside the banner
       var wash = document.createElement('div');
       wash.className = 'banner-wash-layer';
       wash.style.background = targetGradient;
       banner.appendChild(wash);
 
-      // Apply target theme immediately — body/banner background transitions
-      // via CSS transition in sync with the wash animation
+      // Apply target theme immediately — body/banner transitions in sync with wash
       applyTheme(target);
 
       wash.addEventListener('animationend', function () {
         wash.remove();
       });
     } else {
+      // Pixel mode or no banner: CSS steps() transition handles the effect
       applyTheme(target);
     }
   }
