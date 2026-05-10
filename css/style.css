@@ -906,7 +906,8 @@ figure.highlight {
   margin: var(--spacing-lg) 0;
   border-radius: var(--border-radius);
   background: var(--color-code-bg);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   transition: background var(--transition-slow);
 }
 figure.highlight figcaption {
@@ -923,25 +924,13 @@ figure.highlight figcaption a {
 figure.highlight table {
   margin: 0;
   border: none;
-  width: 100%;
-  table-layout: fixed;
+  min-width: 100%;
 }
 figure.highlight table td,
 figure.highlight table th {
   border: none;
   padding: 0;
   vertical-align: top;
-}
-figure.highlight > pre {
-  margin: 0;
-  padding: var(--spacing-md);
-  overflow-x: auto;
-  white-space: pre;
-  overflow-wrap: normal;
-  word-break: normal;
-  color: var(--color-code-text);
-  font-size: 0.85em;
-  line-height: 1.6;
 }
 figure.highlight .gutter {
   width: 3.2rem;
@@ -964,7 +953,6 @@ figure.highlight .gutter pre .line {
 }
 figure.highlight .code {
   position: relative;
-  overflow-x: auto;
 }
 figure.highlight .code pre {
   margin: 0;
@@ -978,6 +966,16 @@ figure.highlight .code pre {
 }
 figure.highlight .code pre .line {
   padding: 0 var(--spacing-xs);
+}
+figure.highlight > pre {
+  margin: 0;
+  padding: var(--spacing-md);
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+  color: var(--color-code-text);
+  font-size: 0.85em;
+  line-height: 1.6;
 }
 figure.highlight::before {
   content: attr(data-lang);
