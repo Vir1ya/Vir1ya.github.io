@@ -162,6 +162,8 @@ blockquote {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   color: var(--color-text-secondary);
   font-style: italic;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -942,12 +944,15 @@ figure.highlight .gutter pre {
   color: var(--color-text-muted);
   font-size: 0.85em;
   line-height: 1.6;
+  white-space: pre;
+  overflow-wrap: normal;
 }
 figure.highlight .gutter pre .line {
   padding: 0 var(--spacing-sm);
 }
 figure.highlight .code {
   position: relative;
+  overflow-x: auto;
 }
 figure.highlight .code pre {
   margin: 0;
@@ -955,6 +960,9 @@ figure.highlight .code pre {
   color: var(--color-code-text);
   font-size: 0.85em;
   line-height: 1.6;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 figure.highlight .code pre .line {
   padding: 0 var(--spacing-xs);

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+
+  
+  <title>四川某单位内部赛一道Crypto | Hexo</title>
+
+  <meta name="description" content="好久没水文章了，贴一篇以前做过的一道题目  Task123456789101112131415161718192021222324252627from Crypto.Util.number import *from flag import p, q, a, b, c, d, e, flag assert p.bit_length() &#x3D;&#x3D; 512assert q.bit_length() &#x3D;&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四川某单位内部赛一道Crypto">
+<meta property="og:url" content="http://example.com/2024/10/03/%E5%9B%9B%E5%B7%9D%E6%9F%90%E5%8D%95%E4%BD%8D%E5%86%85%E9%83%A8%E8%B5%9B%E4%B8%80%E9%81%93Crypto/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="好久没水文章了，贴一篇以前做过的一道题目  Task123456789101112131415161718192021222324252627from Crypto.Util.number import *from flag import p, q, a, b, c, d, e, flag assert p.bit_length() &#x3D;&#x3D; 512assert q.bit_length() &#x3D;&#x3D;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-10-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-10T15:26:49.558Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Crypto">
+<meta name="twitter:card" content="summary">
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  <div class="container">
+    <a href="/" class="site-title">Hexo</a>
+
+    <nav class="site-nav">
+      
+        <a href="/" class="nav-link">Home</a>
+      
+        <a href="/archives" class="nav-link">Archives</a>
+      
+        <a href="/about" class="nav-link">About</a>
+      
+    </nav>
+
+    <div class="header-actions">
+      
+        <button class="btn-icon" id="search-btn" aria-label="Search" title="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      
+      
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      
+    </div>
+  </div>
+</header>
+
+    <main class="main-content">
+      <div class="container">
+        <article class="post-card h-entry single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-card-inner">
+    <header class="post-header">
+      
+      
+  
+    <h1 class="post-title p-name" itemprop="name headline">四川某单位内部赛一道Crypto</h1>
+  
+
+
+      <div class="post-meta">
+        <time class="post-date dt-published" datetime="2024-10-02T16:00:00.000Z" itemprop="datePublished">
+  <a href="/2024/10/03/%E5%9B%9B%E5%B7%9D%E6%9F%90%E5%8D%95%E4%BD%8D%E5%86%85%E9%83%A8%E8%B5%9B%E4%B8%80%E9%81%93Crypto/">2024-10-03</a>
+</time>
+
+        
+
+      </div>
+    </header>
+
+    <div class="post-body e-content" itemprop="articleBody">
+      
+        <blockquote>
+<p>好久没水文章了，贴一篇以前做过的一道题目</p>
+</blockquote>
+<h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">from flag import p, q, a, b, c, d, e, flag</span><br><span class="line"> </span><br><span class="line">assert p.bit_length() == 512</span><br><span class="line">assert q.bit_length() == 512</span><br><span class="line">n = p * q</span><br><span class="line">assert a * a + e * b * b == n</span><br><span class="line">assert c * c + e * d * d == n</span><br><span class="line"> </span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line">cipher = pow(m, e, n)</span><br><span class="line">print(&#x27;n =&#x27;, n)</span><br><span class="line">print(&#x27;cipher =&#x27;, cipher)</span><br><span class="line">print(&#x27;a =&#x27;, a)</span><br><span class="line">print(&#x27;b =&#x27;, b)</span><br><span class="line">print(&#x27;c =&#x27;, c)</span><br><span class="line">print(&#x27;d =&#x27;, d)</span><br><span class="line"> </span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">n = 60759060882959791909904396677188989949758090199603630243982902422381690538885036721260587316981956179159099537464766520810988299027308891716697721325694989187113132568281096643090555966502943628821584608317087986774067361766441006582461264783625589284748285132591500064467264821214540974749792006934616412217</span><br><span class="line">cipher = 20458653228553322014465307182393782250675128141639209159045300541287741675246921642347569059959881263633155911063532171465637193709348356233437155581027365642514135793800584667963139842701093152576878356429568990356697857264248093880916698956321511178224500312370845360786231377700287611408999899734512143183</span><br><span class="line">a = 7794809868300816476939749391923181660663599092817735689970830403880360740950291069966802056703842257352942487715953634294627774900178116901736408438781725</span><br><span class="line">b = 19283995921825875899155714134110227538038032500196406129941198508864582000463560816723795975202107099295086076956040133684</span><br><span class="line">c = 7794809868300816476939748778965768208814733337627617321244638924271232070361166330324980435743037906985498772947115676315756364476413563742000304770717475</span><br><span class="line">d = 172332404813056620110912939211150875333966617506319147214329967023854401850532359816888852973202924631133349299841944983684</span><br><span class="line">&#123;1&#125;</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>e很好求，问题是怎么分解n</p>
+<p>相关论文</p>
+<p><a target="_blank" rel="noopener" href="https://cs.uwaterloo.ca/journals/JIS/VOL17/Matthews/matt10.pdf">https://cs.uwaterloo.ca/journals/JIS/VOL17/Matthews/matt10.pdf</a></p>
+<p>类似题目（plus版</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Sarkoxed/ctf-writeups/tree/master/hacktm2023/kaitenzushi">https://github.com/Sarkoxed/ctf-writeups/tree/master/hacktm2023/kaitenzushi</a></p>
+<h2 id="Exp"><a href="#Exp" class="headerlink" title="Exp"></a>Exp</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">from math import gcd</span><br><span class="line">from Crypto.Util.number import inverse, long_to_bytes</span><br><span class="line"> </span><br><span class="line">n = 60759060882959791909904396677188989949758090199603630243982902422381690538885036721260587316981956179159099537464766520810988299027308891716697721325694989187113132568281096643090555966502943628821584608317087986774067361766441006582461264783625589284748285132591500064467264821214540974749792006934616412217</span><br><span class="line">cipher = 20458653228553322014465307182393782250675128141639209159045300541287741675246921642347569059959881263633155911063532171465637193709348356233437155581027365642514135793800584667963139842701093152576878356429568990356697857264248093880916698956321511178224500312370845360786231377700287611408999899734512143183</span><br><span class="line">a = 7794809868300816476939749391923181660663599092817735689970830403880360740950291069966802056703842257352942487715953634294627774900178116901736408438781725</span><br><span class="line">b = 19283995921825875899155714134110227538038032500196406129941198508864582000463560816723795975202107099295086076956040133684</span><br><span class="line">c = 7794809868300816476939748778965768208814733337627617321244638924271232070361166330324980435743037906985498772947115676315756364476413563742000304770717475</span><br><span class="line">d = 172332404813056620110912939211150875333966617506319147214329967023854401850532359816888852973202924631133349299841944983684</span><br><span class="line"> </span><br><span class="line">e = (n - a * a) // (b * b)</span><br><span class="line"> </span><br><span class="line">z1 = (a * pow(b, -1, n)) % n</span><br><span class="line">z2 = (c * pow(d, -1, n)) % n</span><br><span class="line"> </span><br><span class="line">sum_z = (z1 + z2) % n</span><br><span class="line"> </span><br><span class="line">p = gcd(sum_z, n)</span><br><span class="line">q = n//p</span><br><span class="line"> </span><br><span class="line">phi_n = (p - 1) * (q - 1)</span><br><span class="line">d = inverse(e, phi_n)</span><br><span class="line"> </span><br><span class="line">m = pow(cipher, d, n)</span><br><span class="line"> </span><br><span class="line">flag = long_to_bytes(m)</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        
+  <div class="post-tags">
+    
+      <a class="post-tag" href="/tags/Crypto/">#Crypto</a>
+    
+  </div>
+
+
+      </footer>
+    
+  </div>
+</article>
+
+<nav class="post-nav">
+  <div class="post-nav-prev">
+    
+      <a href="/2024/10/20/2024%E5%8D%8E%E4%B8%BA%E6%9D%AF-%E7%AC%AC%E4%B8%89%E5%B1%8A%E4%B8%AD%E5%9B%BD%E7%A0%94%E7%A9%B6%E7%94%9F%E5%88%9B%E6%96%B0%E5%A4%A7%E8%B5%9BCrypto-WP-%E5%89%8D%E4%B8%A4%E9%A2%98%E5%85%A8%E8%A7%A3%E6%9E%90/" rel="prev">
+        <span class="post-nav-label">Newer</span>
+        <span class="post-nav-title">2024华为杯 第三届中国研究生创新大赛Crypto WP 前两题全解析</span>
+      </a>
+    
+  </div>
+  <div class="post-nav-next">
+    
+      <a href="/2024/08/28/%E4%BA%BA%E7%94%9F%E5%B0%B1%E6%98%AF%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF%E5%95%8A/" rel="next">
+        <span class="post-nav-label">Older</span>
+        <span class="post-nav-title">人生就是旷野之息啊</span>
+      </a>
+    
+  </div>
+</nav>
+
+
+      </div>
+    </main>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-left">
+      
+      <span>&copy; 2026 Vir1ya</span>
+    </div>
+    <div class="footer-right">
+      <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+      <span class="footer-sep">|</span>
+      <span>Theme <a href="https://github.com/Vir1ya/hexo-theme-vitopia" target="_blank" rel="noopener">Vitopia</a></span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div class="search-overlay" id="search-overlay">
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Type to search..." autocomplete="off">
+      <button class="search-close" id="search-close" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="search-results">
+      <div class="search-hint">Type to search...</div>
+    </div>
+  </div>
+</div>
+
+  
+<script src="/js/main.js"></script>
+
+</body>
+</html>

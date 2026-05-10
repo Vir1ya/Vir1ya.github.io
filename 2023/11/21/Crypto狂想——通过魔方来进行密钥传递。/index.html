@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+
+  
+  <title>Crypto狂想——通过魔方来进行密钥传递。 | Hexo</title>
+
+  <meta name="description" content="研究这题牵扯的概念花了我四天空闲时间….我们打ctf的是这样的。  今晚刷crypto题目的时候看到了这样一道题  Mr. Anshel and Mr. Goldfeld were trying to exchange some asymmetric keys to get a shared key. They aren’t very good at math, so they decided">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Crypto狂想——通过魔方来进行密钥传递。">
+<meta property="og:url" content="http://example.com/2023/11/21/Crypto%E7%8B%82%E6%83%B3%E2%80%94%E2%80%94%E9%80%9A%E8%BF%87%E9%AD%94%E6%96%B9%E6%9D%A5%E8%BF%9B%E8%A1%8C%E5%AF%86%E9%92%A5%E4%BC%A0%E9%80%92%E3%80%82/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="研究这题牵扯的概念花了我四天空闲时间….我们打ctf的是这样的。  今晚刷crypto题目的时候看到了这样一道题  Mr. Anshel and Mr. Goldfeld were trying to exchange some asymmetric keys to get a shared key. They aren’t very good at math, so they decided">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-10T11:49:16.223Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Crypto">
+<meta name="twitter:card" content="summary">
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  <div class="container">
+    <a href="/" class="site-title">Hexo</a>
+
+    <nav class="site-nav">
+      
+        <a href="/" class="nav-link">Home</a>
+      
+        <a href="/archives" class="nav-link">Archives</a>
+      
+        <a href="/about" class="nav-link">About</a>
+      
+    </nav>
+
+    <div class="header-actions">
+      
+        <button class="btn-icon" id="search-btn" aria-label="Search" title="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      
+      
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      
+    </div>
+  </div>
+</header>
+
+    <main class="main-content">
+      <div class="container">
+        <article class="post-card h-entry single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-card-inner">
+    <header class="post-header">
+      
+      
+  
+    <h1 class="post-title p-name" itemprop="name headline">Crypto狂想——通过魔方来进行密钥传递。</h1>
+  
+
+
+      <div class="post-meta">
+        <time class="post-date dt-published" datetime="2023-11-20T16:00:00.000Z" itemprop="datePublished">
+  <a href="/2023/11/21/Crypto%E7%8B%82%E6%83%B3%E2%80%94%E2%80%94%E9%80%9A%E8%BF%87%E9%AD%94%E6%96%B9%E6%9D%A5%E8%BF%9B%E8%A1%8C%E5%AF%86%E9%92%A5%E4%BC%A0%E9%80%92%E3%80%82/">2023-11-21</a>
+</time>
+
+        
+
+      </div>
+    </header>
+
+    <div class="post-body e-content" itemprop="articleBody">
+      
+        <blockquote>
+<p>研究这题牵扯的概念花了我四天空闲时间….我们打ctf的是这样的。</p>
+</blockquote>
+<p>今晚刷crypto题目的时候看到了这样一道题</p>
+<blockquote>
+<p>Mr. Anshel and Mr. Goldfeld were trying to exchange some asymmetric keys to get a shared key. They aren’t very good at math, so they decided to use a Rubik’s Cube instead to do the crypto. I don’t think it’s very secure though, I think you might be able to guess some of their keys :hmm:</p>
+<p>```</p>
+<p>Mr. A public key: [B’ U’, F B F, R’ D, B D’]</p>
+<p>Mr. G public key: [R D L’, D U’ B, U F’, L’ F]</p>
+<p>Mr. A sends: [B D’ R’ D R D L’ D’ R D B’, B D’ R’ D D U’ B D’ R D B’, B D’ R’ D U F’ D’ R D B’, B D’ R’ D L’ F D’ R D B’]</p>
+<p>Mr. G sends: [U F’ R D L’ B’ U’ L D’ R’ F U’, U F’ R D L’ F B F L D’ R’ F U’, U F’ R D L’ R’ D L D’ R’ F U’, U F’ R D L’ B D’ L D’ R’ F U’]</p>
+<p>```</p>
+<p><strong>**NOTE: The flag is the shared key that they generate, so it is NOT in</strong> <strong>`utflag{}`</strong> <strong>format**</strong></p>
+<p><em>_by balex_</em></p>
+</blockquote>
+<p>具体意思就是这两个人数学不行又想交换非对称密钥以获得共享密钥，于是就采用了交换魔方的转动顺序。提供的信息包括它们的公钥和它们发送的移动顺序。</p>
+<p>为了破译共享密钥，我们需要应用 A 先生和 G 先生相互发送的动作。然而，需要注意的是，提供的魔方动作是用速记符号书写的，其中每个字母代表一个特定的面旋转（U 代表向上，D 代表向下，L 代表左，R 代表右，F 代表前，B 代表后），撇号 （’） 的存在表示逆时针旋转。</p>
+<p>我没有魔方，就找了一个在线网站转动了一下。</p>
+<p>用Mr.A的顺序转动转出来的是这样的。</p>
+<p>(手动给图片挂404~)</p>
+<p>用Mr.G的顺序转出来是这样的</p>
+<p>(手动给图片挂404~)</p>
+<p>好，我们已经知道他们在干嘛了。虽然我拧完了才发现这几张图好像派不上用场。</p>
+<p>然后我们需要考虑一个问题，那就是密钥传递的安全性。毕竟密码学的诞生就是源于人们对于信息安全的追求。这就要提到密钥交换协议了（还好前几天刚了解到😁），密钥交换协议在生活中很常用，当然这是题外话，不多赘述。（密钥交换协议也可以拿来水一篇文章，lucky~）</p>
+<p>据我所知进行密钥交换的几个算法有Diffie-Hellman (<strong>DHKE</strong>) 和 Elliptic-Curve Diffie-Hellman (<strong>ECDH</strong>)以及Anshel-Anshel-Goldfeld（<strong>AAG</strong>） 。</p>
+<p>从他们交换的内容就可以看出来这显然是AAG（你们不要小看这个，这东西理论上可抗量子攻击），毕竟这是肉眼可见的组，而且符合下图的形式。</p>
+<p>(手动给图片挂404~)</p>
+<p>然后我们可以了解一下AAG</p>
+<p>“AAG协议的主要思想是使用非对称群的概念，其中两个实体可以使用相同的群元素进行密钥交换”</p>
+<blockquote>
+<p>AAG 密钥交换是一种基于群论的密钥交换协议，用于安全地共享密钥，防止第三方窃听或破解。让我们用简单的步骤来解释：</p>
+<ol>
+<li><strong>选择群和非对称生成器：</strong> 首先，通信的双方要选择一个特殊的群（数学结构）以及一个非对称生成器。这个生成器是群中的一个特殊元素，可以生成整个群。</li>
+<li><strong>选择公共元素：</strong> 接下来，通信的双方共同选择一个公共元素，这个元素属于之前选择的群。这个元素是协议的起点。</li>
+<li><strong>生成私钥：</strong> 双方使用非对称生成器和公共元素，通过一些数学运算生成各自的私钥。这个私钥是他们保密的信息。</li>
+<li><strong>交换信息：</strong> 双方将生成的群元素交换，但不透露他们的私钥。这个步骤是在不泄露实际私密信息的情况下分享信息。</li>
+<li><strong>计算共享密钥：</strong> 双方使用对方提供的群元素和自己的私钥进行一系列数学运算，最终生成一个共享的密钥。这个密钥是他们之间的共同秘密。</li>
+<li><strong>验证：</strong> 最后，他们可以执行一些附加步骤，确保没有人监听或篡改了他们的通信。这个验证过程增加了协议的安全性。</li>
+</ol>
+</blockquote>
+<p>接下来我们将题目的内容与AAG对应起来。</p>
+<p>首先是对群的选择，魔方的旋转用啥表示来着？没错！就那几个字母！你们自己翻上去看（￣︶￣）↗　</p>
+<blockquote>
+<p>A先生的公钥是[B’ U’。F B F。R’ D。B D’]</p>
+<p>G先生的公钥是 [R D L’。D U’ B。U F’。L’ F]</p>
+<p>A发给G这个序列：[B D’ R’ D R D L’ D’ R D B’。B D’ R’ D D U’ B D’ R D B’。B D’ R’ D U F’ D’ R D B’。B D’ R’ D L’ F D’ R D B’]</p>
+<p>G发给A这个序列：[U F’ R D L’ B’ U’ L D’ R’ F U’。U F’ R D L’ F B F L D’ R’ F U’。U F’ R D L’ R’ D L D’ R’ F U’。U F’ R D L’ B D’ L D’ R’ F U’]</p>
+</blockquote>
+<p>A先生的公钥是（a1，a2，a3，a4）&#x3D; [B’ U’, F B F, R’ D, B D’]，</p>
+<p>他发给G的是他的共轭公钥(A<sup>-1</sup> g1 A,A<sup>-1</sup> g2 A,A<sup>-1</sup> g3 A,A<sup>-1</sup> g4 A) &#x3D; [B D’ R’ D R D L’ D’ R D B’, B D’ R’ D D U’ B D’ R D B’, B D’ R’ D U F’ D’ R D B’, B D’ R’ D L’ F D’ R D B’]。</p>
+<p>G先生的公钥是（g1，g2，g3，g4）&#x3D; [R D L’, D U’ B, U F’, L’ F]，</p>
+<p>他发给A的是他的共轭公钥(G<sup>-1</sup> a1 G,G<sup>-1</sup> a2 G,G<sup>-1</sup> a3 G,G<sup>-1</sup> a4 G）&#x3D; [U F’ R D L’ B’ U’ L D’ R’ F U’, U F’ R D L’ F B F L D’ R’ F U’, U F’ R D L’ R’ D L D’ R’ F U’, U F’ R D L’ B D’ L D’ R’ F U’]</p>
+<p>显然</p>
+<p>A先生和G先生得到的共享密钥K是相同的，而且魔方这东西也比较好理解，你顺着拧一个顺序组X&#x3D;{U,F,L,D’,U’,R}，那么X‘肯定是反着来的{R’，U，D，L‘，F’，U‘}。还是想象不出来的话可以找个在线网站拧一下。所以咱们就可以开始解了。</p>
+<p>请观察一下题目：</p>
+<p>g1&#x3D;[<strong>R D L’</strong>],</p>
+<p>(A<sup>-1</sup> g1 A)&#x3D;[<em>B D’ R’ D</em> <strong>R D L’</strong> <em>D’ R D B’</em>]</p>
+<p>朋友们告诉我！A<sup>-1</sup>是多少！是_B D’ R’ D_啊！也能看出A是_D’ R D B’_！</p>
+<p>同理：</p>
+<p>a1&#x3D;[<strong>B’ U’</strong>],</p>
+<p>(G<sup>-1</sup> a1 G)&#x3D;[<em>U F’ R D L’</em> <strong>B’ U’</strong> <em>L</em> <em>D’ R’ F U’</em>]</p>
+<p>可得G<sup>-1</sup>=[<em>U F’ R D L’</em>],G&#x3D;[<em>L</em> <em>D’ R’ F U’</em>]</p>
+<p>然后我们知道共享密钥K可由K&#x3D;A<sup>-1</sup> G<sup>-1</sup> AG计算得出</p>
+<p>K&#x3D;B D’ R’ D U F’ R D L’ D’ R D B’ L D’ R’ F U’</p>
+<p>得出<strong>flag{B D’ R’ D U F’ R D L’ D’ R D B’ L D’ R’ F U’}</strong></p>
+<p>这场由做题而起的知识探寻之旅就以做出来这道题结束啦。</p>
+<p>嗯…….第一次感觉Crypto还蛮有意思的。</p>
+<hr>
+<p>可以说用魔方来进行AAG密钥交换是一种非常有意思的变种，因为几乎AAG中每一个特征都可以用魔方来表现出来。比如AAG中逆运算和魔方的”逆旋转“。在AAG中，每个参与者有一个公钥（一组群元素）和一个私钥（基于公钥的某种操作序列）。在魔方的版本中，公钥和私钥可以被视为不同的旋转序列。非常有趣。</p>
+<p>而这一题的难度主要在于对于AAG算法的识别上，只要认出来这是AAG，就可以做到一把梭，连程序都不用写的那种</p>
+<hr>
+<hr>
+<ul>
+<li>题目来源：[UTCTF2020]Cube Crypto</li>
+<li>AAG加密：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Anshel%E2%80%93Anshel%E2%80%93Goldfeld_key_exchange">Anshel-Anshel-Goldfeld 密钥交换 - 维基百科，自由的百科全书 (wikipedia.org)</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        
+  <div class="post-tags">
+    
+      <a class="post-tag" href="/tags/Crypto/">#Crypto</a>
+    
+  </div>
+
+
+      </footer>
+    
+  </div>
+</article>
+
+<nav class="post-nav">
+  <div class="post-nav-prev">
+    
+      <a href="/2023/12/14/%E9%9B%A8%E5%A4%9C%E7%9A%84%E5%A5%94%E8%B7%91%E6%98%AF%E6%88%91%E8%A2%AB%E6%B7%8B%E5%BE%97%E7%B2%BE%E6%B9%BF%E7%9A%84%E9%9D%92%E6%98%A5/" rel="prev">
+        <span class="post-nav-label">Newer</span>
+        <span class="post-nav-title">雨夜的奔跑是我被淋得精湿的青春</span>
+      </a>
+    
+  </div>
+  <div class="post-nav-next">
+    
+  </div>
+</nav>
+
+
+      </div>
+    </main>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-left">
+      
+      <span>&copy; 2026 Vir1ya</span>
+    </div>
+    <div class="footer-right">
+      <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+      <span class="footer-sep">|</span>
+      <span>Theme <a href="https://github.com/Vir1ya/hexo-theme-vitopia" target="_blank" rel="noopener">Vitopia</a></span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div class="search-overlay" id="search-overlay">
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Type to search..." autocomplete="off">
+      <button class="search-close" id="search-close" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="search-results">
+      <div class="search-hint">Type to search...</div>
+    </div>
+  </div>
+</div>
+
+  
+<script src="/js/main.js"></script>
+
+</body>
+</html>
