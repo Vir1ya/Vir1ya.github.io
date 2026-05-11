@@ -21,6 +21,65 @@
     localStorage.setItem(THEME_KEY, theme);
   }
 
+  // Fisher-Yates shuffle
+  function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
+    }
+  }
+
+  // Pixel dissolve: randomly fill 15x15 pixel blocks with targetColor over ~1.5s
+  function pixelDissolve(container, width, height, pixelSize, targetColor, zIndex, onDone) {
+    var canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    canvas.style.cssText =
+      'position:absolute;inset:0;z-index:' + zIndex +
+      ';pointer-events:none;image-rendering:pixelated;width:100%;height:100%;';
+    container.style.position = container.style.position || 'relative';
+    container.appendChild(canvas);
+
+    var ctx = canvas.getContext('2d');
+    var cols = Math.ceil(width / pixelSize);
+    var rows = Math.ceil(height / pixelSize);
+    var total = cols * rows;
+
+    var order = [];
+    for (var k = 0; k < total; k++) order.push(k);
+    shuffle(order);
+
+    var filled = 0;
+    var start = performance.now();
+    var duration = 1500;
+
+    function frame() {
+      var elapsed = performance.now() - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var target = Math.floor(progress * total);
+
+      while (filled < target) {
+        var idx = order[filled];
+        var col = idx % cols;
+        var row = Math.floor(idx / cols);
+        ctx.fillStyle = targetColor;
+        ctx.fillRect(col * pixelSize, row * pixelSize, pixelSize, pixelSize);
+        filled++;
+      }
+
+      if (filled < total) {
+        requestAnimationFrame(frame);
+      } else {
+        canvas.remove();
+        if (onDone) onDone();
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+
   function toggleTheme() {
     var current = document.documentElement.getAttribute('data-theme') || 'light';
     var target = current === 'dark' ? 'light' : 'dark';
@@ -29,27 +88,20 @@
     var isPixel = document.documentElement.getAttribute('data-pixel') === 'true';
 
     if (isPixel) {
-      // Pixel mode: dissolve overlays behind content only
       applyTheme(target);
+      var bodyColor = getComputedStyle(document.body).backgroundColor;
+      var pxSize = 15;
 
-      // Body background dissolve (z-index: -1 sits behind content)
-      var bodyOverlay = document.createElement('div');
-      bodyOverlay.className = 'pixel-dissolve';
-      document.body.appendChild(bodyOverlay);
+      // Body background: random pixel dissolve behind content
+      pixelDissolve(document.body, window.innerWidth, window.innerHeight, pxSize, bodyColor, '-1');
 
-      bodyOverlay.addEventListener('animationend', function () {
-        bodyOverlay.remove();
-      });
-
-      // Banner background dissolve
+      // Banner background: random pixel dissolve between bg and hero content
       if (banner) {
-        var bannerOverlay = document.createElement('div');
-        bannerOverlay.className = 'pixel-dissolve-banner';
-        banner.appendChild(bannerOverlay);
-
-        bannerOverlay.addEventListener('animationend', function () {
-          bannerOverlay.remove();
-        });
+        var bannerRect = banner.getBoundingClientRect();
+        var bannerColor = getComputedStyle(banner).backgroundColor;
+        // The banner bg is a gradient; get the resolved background-color (fallback)
+        // Use bodyColor as the dissolve color since that's what shows through
+        pixelDissolve(banner, bannerRect.width, bannerRect.height, pxSize, bannerColor, '1');
       }
     } else if (banner) {
       // Normal mode: animate color wash curtain inside banner

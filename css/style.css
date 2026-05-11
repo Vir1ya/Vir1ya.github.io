@@ -1499,24 +1499,6 @@ figure.highlight::before {
 [data-pixel="true"] body {
   transition: background 1.2s steps(5, end), color 1.2s steps(5, end);
 }
-.pixel-dissolve {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  image-rendering: pixelated;
-  background: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%) 0 0/30px 30px;
-  animation: pixelDissolve 1.5s steps(10) forwards;
-}
-.pixel-dissolve-banner {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  image-rendering: pixelated;
-  background: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%) 0 0/30px 30px;
-  animation: pixelDissolve 1.5s steps(10) forwards;
-}
 [data-pixel="true"][data-theme="dark"] {
   --color-bg: #fcf8f8;
   --color-bg-secondary: #fbefef;
@@ -1535,36 +1517,4 @@ figure.highlight::before {
   --color-header-bg: rgba(252,248,248,0.95);
   --color-overlay: rgba(252,248,248,0.9);
   --color-date-accent: #f5afaf;
-}
-@-moz-keyframes pixelDissolve {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes pixelDissolve {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-o-keyframes pixelDissolve {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes pixelDissolve {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }
