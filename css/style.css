@@ -67,7 +67,7 @@ body {
   line-height: var(--line-height);
   color: var(--color-text);
   background: var(--color-bg);
-  transition: background 0.7s ease-in-out, color 0.7s ease-in-out;
+  transition: background 0.8s ease, color 0.8s ease;
 }
 a {
   color: var(--color-link);
@@ -329,13 +329,6 @@ kbd {
   clip-path: ellipse(90% 80% at 70% 0);
   transition: background 0.8s ease;
 }
-.banner-wash-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  animation: bannerWash 0.7s ease-in-out forwards;
-}
 .home-banner-content {
   position: relative;
   z-index: 2;
@@ -351,38 +344,6 @@ kbd {
   background: radial-gradient(ellipse 80% 70% at 50% 25%, #6baed6 0%, var(--color-accent-dim) 50%, var(--color-bg-secondary) 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 43%, 93% 43%, 93% 56%, 86% 56%, 86% 67%, 79% 67%, 79% 76%, 72% 76%, 72% 83%, 65% 83%, 65% 88%, 58% 88%, 58% 92%, 51% 92%, 51% 95%, 44% 95%, 44% 97%, 37% 97%, 37% 99%, 30% 99%, 30% 100%, 0% 100%);
   transition: background 1.2s steps(5, end);
-}
-@-moz-keyframes bannerWash {
-  0% {
-    clip-path: inset(0 0 100% 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-@-webkit-keyframes bannerWash {
-  0% {
-    clip-path: inset(0 0 100% 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-@-o-keyframes bannerWash {
-  0% {
-    clip-path: inset(0 0 100% 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-@keyframes bannerWash {
-  0% {
-    clip-path: inset(0 0 100% 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
 }
 .site-header {
   position: fixed;

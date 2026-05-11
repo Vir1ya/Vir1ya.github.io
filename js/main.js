@@ -24,30 +24,7 @@
   function toggleTheme() {
     var current = document.documentElement.getAttribute('data-theme') || 'light';
     var target = current === 'dark' ? 'light' : 'dark';
-
-    var banner = document.querySelector('.home-banner-bg');
-    var isPixel = document.documentElement.getAttribute('data-pixel') === 'true';
-
-    if (banner && !isPixel) {
-      // Normal mode: animate color wash curtain inside banner
-      applyTheme(target);
-      var targetGradient = getComputedStyle(banner).background;
-      applyTheme(current);
-
-      var wash = document.createElement('div');
-      wash.className = 'banner-wash-layer';
-      wash.style.background = targetGradient;
-      banner.appendChild(wash);
-
-      // Apply target theme immediately — body/banner transitions in sync with wash
-      applyTheme(target);
-
-      wash.addEventListener('animationend', function () {
-        wash.remove();
-      });
-    } else {
-      applyTheme(target);
-    }
+    applyTheme(target);
   }
 
   applyTheme(getPreferredTheme());
