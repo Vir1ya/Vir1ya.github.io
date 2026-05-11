@@ -375,4 +375,15 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // ===============
+  // Announcement scroll
+  // ===============
+  var announcementEl = document.getElementById('home-announcement');
+  if (announcementEl) {
+    var textEl = announcementEl.querySelector('.announcement-text');
+    if (textEl && textEl.scrollWidth > textEl.clientWidth) {
+      textEl.classList.add('scroll');
+    }
+  }
 })();
