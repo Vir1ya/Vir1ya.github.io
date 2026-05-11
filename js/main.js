@@ -32,14 +32,20 @@
   }
 
   // Pixel dissolve: randomly fill 15x15 pixel blocks with targetColor over ~1.5s
-  function pixelDissolve(container, width, height, pixelSize, targetColor, zIndex, onDone) {
+  function pixelDissolve(container, width, height, pixelSize, targetColor, zIndex, position, onDone) {
     var canvas = document.createElement('canvas');
     canvas.width = width;
     canvas.height = height;
     canvas.style.cssText =
-      'position:absolute;inset:0;z-index:' + zIndex +
-      ';pointer-events:none;image-rendering:pixelated;width:100%;height:100%;';
-    container.style.position = container.style.position || 'relative';
+      'position:' + position + ';inset:0;z-index:' + zIndex +
+      ';pointer-events:none;image-rendering:pixelated;';
+    if (position === 'absolute') {
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+    }
+    if (position === 'absolute' && container !== document.body) {
+      container.style.position = container.style.position || 'relative';
+    }
     container.appendChild(canvas);
 
     var ctx = canvas.getContext('2d');
@@ -92,16 +98,13 @@
       var bodyColor = getComputedStyle(document.body).backgroundColor;
       var pxSize = 15;
 
-      // Body background: random pixel dissolve behind content
-      pixelDissolve(document.body, window.innerWidth, window.innerHeight, pxSize, bodyColor, '-1');
+      // Body background: fixed full-viewport canvas behind all content
+      pixelDissolve(document.body, window.innerWidth, window.innerHeight, pxSize, bodyColor, '-1', 'fixed');
 
-      // Banner background: random pixel dissolve between bg and hero content
+      // Banner background: absolute canvas between gradient bg and hero content
       if (banner) {
         var bannerRect = banner.getBoundingClientRect();
-        var bannerColor = getComputedStyle(banner).backgroundColor;
-        // The banner bg is a gradient; get the resolved background-color (fallback)
-        // Use bodyColor as the dissolve color since that's what shows through
-        pixelDissolve(banner, bannerRect.width, bannerRect.height, pxSize, bannerColor, '1');
+        pixelDissolve(banner, bannerRect.width, bannerRect.height, pxSize, bodyColor, '1', 'absolute');
       }
     } else if (banner) {
       // Normal mode: animate color wash curtain inside banner
