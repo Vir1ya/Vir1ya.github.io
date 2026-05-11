@@ -21,71 +21,6 @@
     localStorage.setItem(THEME_KEY, theme);
   }
 
-  // Fisher-Yates shuffle
-  function shuffle(arr) {
-    for (var i = arr.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var tmp = arr[i];
-      arr[i] = arr[j];
-      arr[j] = tmp;
-    }
-  }
-
-  // Pixel dissolve: randomly fill 15x15 pixel blocks with targetColor over ~1.5s
-  function pixelDissolve(container, width, height, pixelSize, targetColor, zIndex, position, onDone) {
-    var canvas = document.createElement('canvas');
-    canvas.width = width;
-    canvas.height = height;
-    canvas.style.cssText =
-      'position:' + position + ';inset:0;z-index:' + zIndex +
-      ';pointer-events:none;image-rendering:pixelated;';
-    if (position === 'absolute') {
-      canvas.style.width = '100%';
-      canvas.style.height = '100%';
-    }
-    if (position === 'absolute' && container !== document.body) {
-      container.style.position = container.style.position || 'relative';
-    }
-    container.appendChild(canvas);
-
-    var ctx = canvas.getContext('2d');
-    var cols = Math.ceil(width / pixelSize);
-    var rows = Math.ceil(height / pixelSize);
-    var total = cols * rows;
-
-    var order = [];
-    for (var k = 0; k < total; k++) order.push(k);
-    shuffle(order);
-
-    var filled = 0;
-    var start = performance.now();
-    var duration = 1500;
-
-    function frame() {
-      var elapsed = performance.now() - start;
-      var progress = Math.min(elapsed / duration, 1);
-      var target = Math.floor(progress * total);
-
-      while (filled < target) {
-        var idx = order[filled];
-        var col = idx % cols;
-        var row = Math.floor(idx / cols);
-        ctx.fillStyle = targetColor;
-        ctx.fillRect(col * pixelSize, row * pixelSize, pixelSize, pixelSize);
-        filled++;
-      }
-
-      if (filled < total) {
-        requestAnimationFrame(frame);
-      } else {
-        canvas.remove();
-        if (onDone) onDone();
-      }
-    }
-
-    requestAnimationFrame(frame);
-  }
-
   function toggleTheme() {
     var current = document.documentElement.getAttribute('data-theme') || 'light';
     var target = current === 'dark' ? 'light' : 'dark';
@@ -93,20 +28,7 @@
     var banner = document.querySelector('.home-banner-bg');
     var isPixel = document.documentElement.getAttribute('data-pixel') === 'true';
 
-    if (isPixel) {
-      applyTheme(target);
-      var bodyColor = getComputedStyle(document.body).backgroundColor;
-      var pxSize = 15;
-
-      // Body background: fixed full-viewport canvas behind all content
-      pixelDissolve(document.body, window.innerWidth, window.innerHeight, pxSize, bodyColor, '-1', 'fixed');
-
-      // Banner background: absolute canvas between gradient bg and hero content
-      if (banner) {
-        var bannerRect = banner.getBoundingClientRect();
-        pixelDissolve(banner, bannerRect.width, bannerRect.height, pxSize, bodyColor, '1', 'absolute');
-      }
-    } else if (banner) {
+    if (banner && !isPixel) {
       // Normal mode: animate color wash curtain inside banner
       applyTheme(target);
       var targetGradient = getComputedStyle(banner).background;
