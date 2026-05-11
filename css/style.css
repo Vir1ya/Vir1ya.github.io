@@ -1502,10 +1502,19 @@ figure.highlight::before {
 .pixel-dissolve {
   position: fixed;
   inset: 0;
-  z-index: 9998;
+  z-index: -1;
   pointer-events: none;
   image-rendering: pixelated;
-  background: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%) 0 0/6px 6px;
+  background: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%) 0 0/30px 30px;
+  animation: pixelDissolve 1.5s steps(10) forwards;
+}
+.pixel-dissolve-banner {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  image-rendering: pixelated;
+  background: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%) 0 0/30px 30px;
   animation: pixelDissolve 1.5s steps(10) forwards;
 }
 [data-pixel="true"][data-theme="dark"] {

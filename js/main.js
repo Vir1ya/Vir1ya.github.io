@@ -29,16 +29,28 @@
     var isPixel = document.documentElement.getAttribute('data-pixel') === 'true';
 
     if (isPixel) {
-      // Pixel mode: full-screen pixel dissolve overlay
+      // Pixel mode: dissolve overlays behind content only
       applyTheme(target);
 
-      var overlay = document.createElement('div');
-      overlay.className = 'pixel-dissolve';
-      document.body.appendChild(overlay);
+      // Body background dissolve (z-index: -1 sits behind content)
+      var bodyOverlay = document.createElement('div');
+      bodyOverlay.className = 'pixel-dissolve';
+      document.body.appendChild(bodyOverlay);
 
-      overlay.addEventListener('animationend', function () {
-        overlay.remove();
+      bodyOverlay.addEventListener('animationend', function () {
+        bodyOverlay.remove();
       });
+
+      // Banner background dissolve
+      if (banner) {
+        var bannerOverlay = document.createElement('div');
+        bannerOverlay.className = 'pixel-dissolve-banner';
+        banner.appendChild(bannerOverlay);
+
+        bannerOverlay.addEventListener('animationend', function () {
+          bannerOverlay.remove();
+        });
+      }
     } else if (banner) {
       // Normal mode: animate color wash curtain inside banner
       applyTheme(target);
