@@ -350,7 +350,7 @@ kbd {
 [data-pixel="true"] .home-banner-bg {
   background: radial-gradient(ellipse 80% 70% at 50% 25%, #6baed6 0%, var(--color-accent-dim) 50%, var(--color-bg-secondary) 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 43%, 93% 43%, 93% 56%, 86% 56%, 86% 67%, 79% 67%, 79% 76%, 72% 76%, 72% 83%, 65% 83%, 65% 88%, 58% 88%, 58% 92%, 51% 92%, 51% 95%, 44% 95%, 44% 97%, 37% 97%, 37% 99%, 30% 99%, 30% 100%, 0% 100%);
-  transition: background 0.8s steps(8, end);
+  transition: background 1.2s steps(5, end);
 }
 @-moz-keyframes bannerWash {
   0% {
@@ -1472,7 +1472,7 @@ figure.highlight::before {
 }
 [data-pixel="true"] figure.highlight {
   background: var(--color-code-bg);
-  transition: background 0.8s steps(8, end);
+  transition: background 1.2s steps(5, end);
 }
 [data-pixel="true"] figure.highlight .code pre {
   color: var(--color-code-text);
@@ -1497,7 +1497,16 @@ figure.highlight::before {
   color: var(--color-bg);
 }
 [data-pixel="true"] body {
-  transition: background 0.8s steps(8, end), color 0.8s steps(8, end);
+  transition: background 1.2s steps(5, end), color 1.2s steps(5, end);
+}
+.pixel-dissolve {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  image-rendering: pixelated;
+  background: repeating-conic-gradient(#000 0% 25%, transparent 0% 50%) 0 0/6px 6px;
+  animation: pixelDissolve 1.5s steps(10) forwards;
 }
 [data-pixel="true"][data-theme="dark"] {
   --color-bg: #fcf8f8;
@@ -1517,4 +1526,36 @@ figure.highlight::before {
   --color-header-bg: rgba(252,248,248,0.95);
   --color-overlay: rgba(252,248,248,0.9);
   --color-date-accent: #f5afaf;
+}
+@-moz-keyframes pixelDissolve {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pixelDissolve {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes pixelDissolve {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pixelDissolve {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

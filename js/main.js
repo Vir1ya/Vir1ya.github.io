@@ -28,7 +28,18 @@
     var banner = document.querySelector('.home-banner-bg');
     var isPixel = document.documentElement.getAttribute('data-pixel') === 'true';
 
-    if (banner && !isPixel) {
+    if (isPixel) {
+      // Pixel mode: full-screen pixel dissolve overlay
+      applyTheme(target);
+
+      var overlay = document.createElement('div');
+      overlay.className = 'pixel-dissolve';
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('animationend', function () {
+        overlay.remove();
+      });
+    } else if (banner) {
       // Normal mode: animate color wash curtain inside banner
       applyTheme(target);
       var targetGradient = getComputedStyle(banner).background;
@@ -46,7 +57,6 @@
         wash.remove();
       });
     } else {
-      // Pixel mode or no banner: CSS steps() transition handles the effect
       applyTheme(target);
     }
   }
