@@ -603,6 +603,34 @@ kbd {
 .post-card.single .post-body {
   color: var(--color-text);
 }
+.post-share {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-2xl);
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  font-family: var(--font-sans);
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.share-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 12px rgba(201,119,46,0.12);
+}
+.share-btn svg {
+  flex-shrink: 0;
+}
 .post-footer {
   margin-top: var(--spacing-2xl);
   padding-top: var(--spacing-lg);
