@@ -171,6 +171,7 @@
     
       <footer class="post-footer">
         
+          
   <div class="post-tags">
     
       <a class="post-tag" href="/tags/Crypto/">#Crypto</a>
@@ -178,18 +179,27 @@
   </div>
 
 
+        
+        
+          <div class="share-widget">
+            <div class="share-items">
+              <a class="share-item share-item-qzone" title="QQ 空间" data-platform="qzone">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.1 6.5h6.9l-5.6 4 2.1 6.5-5.6-4-5.6 4 2.1-6.5-5.6-4h6.9z"/></svg>
+              </a>
+              <a class="share-item share-item-qq" title="QQ 好友" data-platform="qq">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.75 7.5c0-2.9 2.35-5.25 5.25-5.25s5.25 2.35 5.25 5.25c0 1.7-.8 3.2-2.05 4.15.6.15 1.2.35 1.75.6 1.55.7 2.8 1.85 2.8 3.25v1.5c0 .3-.25.5-.5.5H4.75c-.25 0-.5-.2-.5-.5v-1.5c0-1.4 1.25-2.55 2.8-3.25.55-.25 1.15-.45 1.75-.6-1.25-.95-2.05-2.45-2.05-4.15z"/></svg>
+              </a>
+            </div>
+            <button class="share-toggle">
+              <svg class="share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+          </div>
+        
       </footer>
     
   </div>
 </article>
 
-
-<div class="post-share">
-  <button class="share-btn" id="share-to-qzone" title="分享到 QQ 空间">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-    <span>分享到 QQ 空间</span>
-  </button>
-</div>
 
 <nav class="post-nav">
   <div class="post-nav-prev">
@@ -213,18 +223,14 @@
 
 <script>
 (function() {
-  var btn = document.getElementById('share-to-qzone');
-  if (!btn) return;
-
   var title = '2024华为杯 第三届中国研究生创新大赛Crypto WP 前两题全解析';
   var url   = 'https://vir1ya.github.io/2024-huawei-cup-crypto-wp/';
   var desc  = '%E4%B8%80%E5%85%B1%E5%9B%9B%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E5%8F%AA%E4%BC%9A%E5%89%8D%E4%B8%A4%E9%81%93%E9%A2%98%E3%80%82%E8%BF%98%E6%98%AF%E6%8A%80%E6%9C%AF%E4%B8%8D%E5%A4%9F%E5%95%8A';
   var cover = '';
 
-  btn.addEventListener('click', function() {
-    // 在手机 QQ 内 — 用 JS Bridge 唤起原生分享（支持隐私设置）
+  function doShare(platform) {
     if (typeof mqq !== 'undefined' && mqq.invoke) {
-      mqq.invoke('share', 'toQz', {
+      mqq.invoke('share', platform === 'qzone' ? 'toQz' : 'toQQ', {
         imgUrl: cover,
         title: title,
         desc: desc,
@@ -232,13 +238,20 @@
       }, function() {});
       return;
     }
-
-    // 兜底 — 一键分享 URL（纯 Web）
-    var shareUrl = 'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey'
-      + '?url=' + encodeURIComponent(url)
+    var base = platform === 'qzone'
+      ? 'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey'
+      : 'https://connect.qq.com/widget/shareqq/index.html';
+    var shareUrl = base + '?url=' + encodeURIComponent(url)
       + '&title=' + encodeURIComponent(title)
       + '&desc=' + encodeURIComponent(desc);
     window.open(shareUrl, '_blank', 'width=600,height=500');
+  }
+
+  document.querySelectorAll('.share-item').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      doShare(this.dataset.platform);
+    });
   });
 })();
 </script>
