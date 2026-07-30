@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ch">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,13 +7,13 @@
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
   
-  <title>Archives: 2023/11 | link&#39;s Garden</title>
+  <title>归档: 2023/11 | link&#39;s Garden</title>
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="link&#39;s Garden">
 <meta property="og:url" content="https://vir1ya.github.io/archives/2023/11/index.html">
 <meta property="og:site_name" content="link&#39;s Garden">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="article:author" content="Viriya">
 <meta name="twitter:card" content="summary">
 
@@ -28,7 +28,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap" rel="stylesheet">
 <meta name="generator" content="Hexo 8.1.2"></head>
 
 <body>
@@ -39,17 +39,17 @@
 
     <nav class="site-nav">
       
-        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link">首页</a>
       
-        <a href="/archives" class="nav-link">Archives</a>
+        <a href="/archives" class="nav-link">归档</a>
       
-        <a href="/about" class="nav-link">About</a>
+        <a href="/about" class="nav-link">关于</a>
       
     </nav>
 
     <div class="header-actions">
       
-        <button class="btn-icon" id="search-btn" aria-label="Search" title="Search">
+        <button class="btn-icon" id="search-btn" aria-label="搜索" title="搜索">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
       
@@ -65,7 +65,8 @@
 
     <main class="main-content">
       <div class="container">
-        <div class="archive-page">
+        <div class="archive-page archive-timeline">
+  <div class="archive-timeline-line" aria-hidden="true"></div>
   
   
     
@@ -76,10 +77,12 @@
         <div class="archive-posts">
       
     
-    <div class="archive-post-item">
+    <div class="archive-post-item archive-timeline-item is-left">
+      <span class="archive-timeline-dot" aria-hidden="true"></span>
       <time datetime="2023-11-20T16:00:00.000Z">11-21</time>
       <a href="/crypto-rubiks-cube-key-exchange/">Crypto狂想——通过魔方来进行密钥传递。</a>
     </div>
+    
   
   
     </div>
@@ -97,12 +100,12 @@
   <div class="container">
     <div class="footer-left">
       
-      <span>&copy; 2023–2026 Vir1ya</span><br><a class="footer-icp" href="https://icp.gov.moe/?keyword=20230624" target="_blank" rel="noopener">萌ICP备20230624号</a>
+      <span>&copy; 2023–2026 Viriya</span><br><a class="footer-icp" href="https://icp.gov.moe/?keyword=20230624" target="_blank" rel="noopener">萌ICP备20230624号</a>
     </div>
     <div class="footer-right">
-      <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+      <span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
       <span class="footer-sep">|</span>
-      <span>Theme <a href="https://github.com/Vir1ya/hexo-theme-vitopia" target="_blank" rel="noopener">Vitopia</a></span>
+      <span>主题 <a href="https://github.com/Vir1ya/hexo-theme-vitopia" target="_blank" rel="noopener">Vitopia</a></span>
     </div>
   </div>
 </footer>
@@ -112,13 +115,13 @@
   <div class="search-modal">
     <div class="search-input-wrap">
       <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="search-input" class="search-input" placeholder="Type to search..." autocomplete="off">
+      <input type="text" id="search-input" class="search-input" placeholder="输入关键词搜索..." autocomplete="off">
       <button class="search-close" id="search-close" aria-label="Close">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
     <div class="search-results" id="search-results">
-      <div class="search-hint">Type to search...</div>
+      <div class="search-hint">输入关键词搜索...</div>
     </div>
   </div>
 </div>
