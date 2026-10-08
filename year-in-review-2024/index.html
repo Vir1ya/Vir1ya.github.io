@@ -17,7 +17,7 @@
 <meta property="og:description" content="今年……多可喜，亦多可悲吧。很多事过于私人，不好写出来，博客是个公共空间，也不好直接骂某些我不喜欢的人是傻逼（敲下傻逼这两个字的时候我感到很高兴，还好是博客，不然这两个字都敲不出来）。只能宽宽的写一下了。 首先是生活方面。 今年上半年发生了什么事情，我已经不怎么记得了。暑假应该是我印象最清晰的一段时光。汪曾祺，九寨沟，周恩来，我去了好多地方，外面的空气果然比房间里好，人生就是旷野之息。而今年最后几">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-12-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-10T15:21:35.307Z">
+<meta property="article:modified_time" content="2026-10-08T08:30:30.951Z">
 <meta property="article:author" content="Viriya">
 <meta property="article:tag" content="记事">
 <meta name="twitter:card" content="summary">
@@ -44,17 +44,17 @@
 
     <nav class="site-nav">
       
-        <a href="/" class="nav-link">首页</a>
+        <a href="/" class="nav-link">Home</a>
       
-        <a href="/archives" class="nav-link">归档</a>
+        <a href="/archives" class="nav-link">Archives</a>
       
-        <a href="/about" class="nav-link">关于</a>
+        <a href="/about" class="nav-link">About</a>
       
     </nav>
 
     <div class="header-actions">
       
-        <button class="btn-icon" id="search-btn" aria-label="搜索" title="搜索">
+        <button class="btn-icon" id="search-btn" aria-label="Search" title="Search">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
       
@@ -131,7 +131,7 @@
               <a class="share-item share-item-qq" title="QQ 好友" data-platform="qq">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.75 7.5c0-2.9 2.35-5.25 5.25-5.25s5.25 2.35 5.25 5.25c0 1.7-.8 3.2-2.05 4.15.6.15 1.2.35 1.75.6 1.55.7 2.8 1.85 2.8 3.25v1.5c0 .3-.25.5-.5.5H4.75c-.25 0-.5-.2-.5-.5v-1.5c0-1.4 1.25-2.55 2.8-3.25.55-.25 1.15-.45 1.75-.6-1.25-.95-2.05-2.45-2.05-4.15z"/></svg>
               </a>
-              <a class="share-item share-item-save-image" title="保存为图片" data-action="save-image" href="javascript:void(0)">
+              <a class="share-item share-item-save-image" title="Save as image" data-action="save-image" href="javascript:void(0)">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
               </a>
             </div>
@@ -150,7 +150,7 @@
   <div class="post-nav-prev">
     
       <a href="/year-in-review-2025/" rel="prev">
-        <span class="post-nav-label">前一篇</span>
+        <span class="post-nav-label">Newer</span>
         <span class="post-nav-title">2025年度总结</span>
       </a>
     
@@ -158,7 +158,7 @@
   <div class="post-nav-next">
     
       <a href="/2024-jiangsu-mobile-crypto-rsa2/" rel="next">
-        <span class="post-nav-label">后一篇</span>
+        <span class="post-nav-label">Older</span>
         <span class="post-nav-title">2024江苏移动赋能赛Crypto RSA2</span>
       </a>
     
@@ -207,8 +207,8 @@
   // Save Article as Image (html2canvas)
   // ===============
   var HTML2CANVAS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-  var generatingLabel = "生成中...";
-  var failedLabel = "保存图片失败，请重试";
+  var generatingLabel = "Generating...";
+  var failedLabel = "Failed to save image, please retry";
 
   function loadHtml2Canvas(onDone, onError) {
     if (window.html2canvas) { onDone(); return; }
@@ -395,9 +395,9 @@
       <span>&copy; 2023–2026 Viriya</span><br><a class="footer-icp" href="https://icp.gov.moe/?keyword=20230624" target="_blank" rel="noopener">萌ICP备20230624号</a>
     </div>
     <div class="footer-right">
-      <span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
+      <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></span>
       <span class="footer-sep">|</span>
-      <span>主题 <a href="https://github.com/Vir1ya/hexo-theme-vitopia" target="_blank" rel="noopener">Vitopia</a></span>
+      <span>Theme <a href="https://github.com/Vir1ya/hexo-theme-vitopia" target="_blank" rel="noopener">Vitopia</a></span>
     </div>
   </div>
 </footer>
@@ -407,13 +407,13 @@
   <div class="search-modal">
     <div class="search-input-wrap">
       <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="search-input" class="search-input" placeholder="输入关键词搜索..." autocomplete="off">
+      <input type="text" id="search-input" class="search-input" placeholder="Type to search..." autocomplete="off">
       <button class="search-close" id="search-close" aria-label="Close">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
     <div class="search-results" id="search-results">
-      <div class="search-hint">输入关键词搜索...</div>
+      <div class="search-hint">Type to search...</div>
     </div>
   </div>
 </div>
