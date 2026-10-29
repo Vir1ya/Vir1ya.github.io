@@ -1703,19 +1703,23 @@ figure.highlight > pre {
   color: var(--color-text-muted);
   font-size: var(--font-size-xs);
 }
-.reviews-heading {
+.reviews-heading,
+.gallery-heading {
   margin-bottom: var(--spacing-lg);
 }
-.reviews-heading h1 {
+.reviews-heading h1,
+.gallery-heading h1 {
   font-size: var(--font-size-2xl);
 }
-.review-filters {
+.review-filters,
+.gallery-filters {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-sm);
   margin-bottom: var(--spacing-xl);
 }
-.review-filters button {
+.review-filters button,
+.gallery-filters button {
   color: var(--color-text-secondary);
   background: transparent;
   border: 1px solid transparent;
@@ -1724,8 +1728,10 @@ figure.highlight > pre {
   font: inherit;
   font-size: var(--font-size-sm);
   cursor: pointer;
+  text-decoration: none;
 }
-.review-filters button[aria-pressed='true'] {
+.review-filters button[aria-pressed='true'],
+.gallery-filters button[aria-pressed='true'] {
   color: var(--color-text);
   background: var(--color-bg-secondary);
   border-color: var(--color-border);
@@ -1841,6 +1847,64 @@ figure.highlight > pre {
     font-size: var(--font-size-sm);
   }
 }
+.gallery-container {
+  width: 100%;
+  max-width: 1280px;
+}
+.gallery-grid {
+  column-width: 260px;
+  column-gap: var(--spacing-lg);
+}
+.gallery-item {
+  margin: 0 0 var(--spacing-lg);
+  min-width: 0;
+  break-inside: avoid;
+}
+.gallery-item a {
+  display: block;
+}
+.gallery-item a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+.gallery-item figcaption {
+  margin-top: var(--spacing-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  overflow-wrap: anywhere;
+}
+.gallery-empty {
+  color: var(--color-text-muted);
+}
+.gallery-item[hidden] {
+  display: none;
+}
+.gallery-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+.gallery-tags span {
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--border-radius);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+}
+.gallery-filter-empty {
+  color: var(--color-text-muted);
+}
+.gallery-filter-hint {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
 @media (max-width: 768px) {
   html {
     font-size: 16px;
@@ -1907,6 +1971,7 @@ figure.highlight > pre {
   .site-nav {
     order: 3;
     width: 100%;
+    flex-wrap: wrap;
     justify-content: center;
   }
   .main-content {
