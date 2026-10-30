@@ -1902,11 +1902,6 @@ figure.highlight > pre {
 .gallery-filter-empty {
   color: var(--color-text-muted);
 }
-.gallery-filter-hint {
-  margin-bottom: var(--spacing-md);
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-xs);
-}
 .gallery-image-link {
   position: relative;
   overflow: hidden;
